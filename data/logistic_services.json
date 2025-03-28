@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Vận chuyển đường bộ",
+    "description": "Giao hàng nhanh trong nước",
+    "price": 100
+  },
+  {
+    "id": 2,
+    "name": "Vận chuyển đường biển",
+    "description": "Hàng hóa quốc tế",
+    "price": 200
+  }
+]

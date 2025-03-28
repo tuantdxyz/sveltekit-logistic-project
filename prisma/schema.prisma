@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+// run: npx prisma migrate dev --name init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Service {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String
+  price       Float
+  pricings    Pricing[] // Mối quan hệ ngược lại
+}
+
+model Pricing {
+  id          Int      @id @default(autoincrement())
+  serviceId   Int
+  price       Float
+  currency    String
+  service     Service  @relation(fields: [serviceId], references: [id])
+}
+
+model Shipping {
+  id          Int      @id @default(autoincrement())
+  orderId     String
+  status      String
+}
+
+model Tracking {
+  id         Int      @id @default(autoincrement())
+  trackingId String   @unique
+  status     String
+  location   String?
+  updatedAt  DateTime @updatedAt
+}
