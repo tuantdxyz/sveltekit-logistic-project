@@ -1,0 +1,23 @@
+{
+    "welcome": "Welcome to Velog Logistic",
+    "description": "Fast and reliable transportation service",
+    "pricing": "Pricing",
+    "tracking": "Tracking",
+    "shipping": "Shipping",
+    "trackingIdPlaceholder": "Tracking ID",
+    "trackButton": "Track",
+    "modalTitle": "Order Status",
+    "loading": "Loading...",
+    "errorEmpty": "Please enter a tracking ID!",
+    "errorFetch": "An error occurred while fetching the order!",
+    "errorConnection": "Connection error, please try again!",
+    "orderId": "ID:",
+    "status": "Status:",
+    "location": "Location:",
+    "updatedAt": "Updated:",
+    "close": "Close",
+    "statusProcessing": "Processing",
+    "statusDelivering": "Delivering",
+    "statusDelivered": "Delivered",
+    "statusCancelled": "Cancelled"
+  }

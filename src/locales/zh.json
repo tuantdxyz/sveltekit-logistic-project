@@ -1,0 +1,23 @@
+{
+    "welcome": "欢迎体验Velog物流",
+    "description": "快速可靠的运输服务",
+    "pricing": "报价",
+    "tracking": "跟踪",
+    "shipping": "运输",
+    "trackingIdPlaceholder": "跟踪ID",
+    "trackButton": "跟踪",
+    "modalTitle": "订单状态",
+    "loading": "加载中...",
+    "errorEmpty": "请输入跟踪ID！",
+    "errorFetch": "查询订单时发生错误！",
+    "errorConnection": "连接错误，请重试！",
+    "orderId": "编号：",
+    "status": "状态：",
+    "location": "位置：",
+    "updatedAt": "更新时间：",
+    "close": "关闭",
+    "statusProcessing": "处理中",
+    "statusDelivering": "配送中",
+    "statusDelivered": "已送达",
+    "statusCancelled": "已取消"
+  }
