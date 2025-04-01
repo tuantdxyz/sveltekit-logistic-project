@@ -1,0 +1,14 @@
+<svg
+    class="w-8 h-8 sm:w-12 sm:h-12 text-purple-600 dark:text-purple-400 mb-2 sm:mb-4"
+    fill="none"
+    stroke="#9333EA"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <path
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    d="M3 3h18v18H3zM9 3v18m6-18v18"
+    ></path>
+</svg>
