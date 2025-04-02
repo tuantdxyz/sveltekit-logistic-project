@@ -1,0 +1,6 @@
+<svg class="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <!-- Vòng tròn -->
+  <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" />
+  <!-- Dấu hỏi -->
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 16h.01M12 12a2 2 0 10-2-2 2 2 0 002 2zm0 0v2" />
+</svg>

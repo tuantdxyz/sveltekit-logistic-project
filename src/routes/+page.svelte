@@ -7,25 +7,37 @@
 
   // Import các icon SVG
   import LoadingSpinner from "../icons/LoadingSpinner.svg";
-  import WarehouseIcon from "../icons/WarehouseIcon.svg";
   import ProcessingIcon from "../icons/ProcessingIcon.svg";
-  import MotorbikeIcon from "../icons/MotorbikeIcon.svg";
-  import CarIcon from "../icons/CarIcon.svg";
-  import PlaneIcon from "../icons/PlaneIcon.svg";
-  import CheckmarkIcon from "../icons/CheckmarkIcon.svg";
-  import CancelIcon from "../icons/CancelIcon.svg";
+  import DeliveringIcon from "../icons/DeliveringIcon.svg";
+  import DeliveredIcon from "../icons/DeliveredIcon.svg";
+  import CancelledIcon from "../icons/CancelledIcon.svg";
   import PricingTopIcon from "../icons/PricingTopIcon.svg";
   import TrackingTopIcon from "../icons/TrackingTopIcon.svg";
   import ShippingTopIcon from "../icons/ShippingTopIcon.svg";
+  import ReturnedIcon from "../icons/ReturnedIcon.svg";
+  import DefaultIcon from "../icons/DefaultIcon.svg";
 
+  // Import Component
+  // import FeatureList from "$lib/components/FeatureList.svelte";
+  import TransportationSection from "$lib/components/TransportationSection.svelte";
+
+  // Khai báo biến
   let trackingId = "";
   let showModal = false;
-  let orderStatus: Tracking | null = null;
+  let order: Tracking | null = null;
   let errorMessage = "";
   let isLoading = false;
   let isI18nReady = false;
   let abortController: AbortController | undefined;
-
+  let statusConfig: {
+    color: string;
+    statusIcon: string;
+    label: string;
+  } = {
+    color: "",
+    statusIcon: "",
+    label: "",
+  };
   // Chờ i18n sẵn sàng
   onMount(() => {
     isI18nReady = true;
@@ -53,7 +65,8 @@
       const data = await response.json();
 
       if (response.ok) {
-        orderStatus = data as Tracking;
+        order = data as Tracking;
+        updateStatusConfig(order);
         clearError();
       } else {
         setError(data.message || $_("errorFetch"));
@@ -75,7 +88,7 @@
 
   function setError(message: string) {
     errorMessage = message;
-    orderStatus = null;
+    order = null;
   }
 
   function clearError() {
@@ -84,99 +97,58 @@
 
   function resetState() {
     showModal = false;
-    orderStatus = null;
+    order = null;
     errorMessage = "";
-    trackingId = "";
+    // trackingId = "";
     isLoading = false;
   }
 
-  // Object ánh xạ trạng thái, màu sắc, icon
-  const statusConfig: Record<
-    string,
-    {
-      color: string;
-      statusIcon: string;
-      locationIcon?: string;
-    }
-  > = {
-    "Đang xử lý": {
-      color: "text-yellow-500",
-      statusIcon: ProcessingIcon,
-      locationIcon: WarehouseIcon,
-    },
-    "Đang giao hàng": {
-      color: "text-blue-500",
-      statusIcon: MotorbikeIcon,
-    },
-    "Đã giao": {
-      color: "text-green-500",
-      statusIcon: CheckmarkIcon,
-    },
-    Hủy: {
-      color: "text-red-500",
-      statusIcon: CancelIcon,
-    },
-  };
-
-  // Object ánh xạ icon theo location
-  const locationIcons: Record<string, string> = {
-    "Hà Nội": MotorbikeIcon,
-    "Đà Nẵng": MotorbikeIcon,
-    "TP.HCM": CarIcon,
-    "Cần Thơ": CarIcon,
-    "Hải Phòng": PlaneIcon,
-  };
-
-  // Hàm lấy config cho trạng thái
-  function getStatusConfig(status: string) {
-    return (
-      statusConfig[status] || {
-        color: "text-gray-700 dark:text-gray-300",
-        statusIcon: "",
-      }
-    );
-  }
-
-  // Hàm lấy icon vị trí
-  function getLocationIcon(status: string, location?: string) {
-    if (status === "Đang xử lý") {
-      return WarehouseIcon;
-    }
-    return location ? locationIcons[location] || MotorbikeIcon : MotorbikeIcon;
-  }
-
   // Định nghĩa cấu trúc dữ liệu hiển thị
-  function getOrderDetails(order: Tracking) {
-    const statusConfig = getStatusConfig(order.status);
-    return [
-      {
-        label: $_("orderId"),
-        value: order.trackingId,
-      },
-      {
-        label: $_("status"),
-        value: order.status,
-        icon: statusConfig.statusIcon,
-        color: statusConfig.color,
-      },
-      ...(order.location
-        ? [
-            {
-              label: $_("location"),
-              value: order.location,
-              icon: getLocationIcon(order.status, order.location),
-            },
-          ]
-        : []),
-      ...(order.updatedAt
-        ? [
-            {
-              label: $_("updatedAt"),
-              value: new Date(order.updatedAt).toLocaleString(),
-            },
-          ]
-        : []),
-    ];
+  function updateStatusConfig(order: Tracking) {
+    switch (order.status) {
+      case "Processing": // Đang xử lý
+        statusConfig = {
+          color: "text-yellow-500",
+          statusIcon: ProcessingIcon,
+          label: $_("statusProcessing"),
+        };
+        break;
+      case "Delivering": // Đang giao hàng
+        statusConfig = {
+          color: "text-blue-500",
+          statusIcon: DeliveringIcon,
+          label: $_("statusDelivering"),
+        };
+        break;
+      case "Delivered": // Đã giao
+        statusConfig = {
+          color: "text-green-500",
+          statusIcon: DeliveredIcon,
+          label: $_("statusDelivered"),
+        };
+        break;
+      case "Cancelled": // Hủy
+        statusConfig = {
+          color: "text-red-500",
+          statusIcon: CancelledIcon,
+          label: $_("statusCancelled"),
+        };
+        break;
+      case "Returned": // Hoàn hàng
+        statusConfig = {
+          color: "text-yellow-700",
+          statusIcon: ReturnedIcon,
+          label: $_("statusReturned"),
+        };
+        break;
+      default: // Không rõ
+        statusConfig = {
+          color: "text-gray-500",
+          statusIcon: DefaultIcon,
+          label: $_("statusUnknown"),
+        };
+        break;
+    }
   }
 
   function handleKeydown(event: KeyboardEvent) {
@@ -197,7 +169,7 @@
 <main class="min-h-screen bg-transparent text-gray-900 dark:text-gray-100">
   <!-- Hero Section -->
   <section
-    class="relative py-12 sm:py-16 bg-cover bg-top bg-no-repeat min-h-screen bg-[url('/images/logistics-bg01.jpg')]"
+    class="relative py-12 sm:py-16 bg-cover bg-top bg-no-repeat h-[480px] bg-[url('/images/logistics-bg01.jpg')]"
   >
     <div class="absolute inset-0 bg-black opacity-50"></div>
     <div class="relative container mx-auto px-4 max-w-6xl text-center">
@@ -249,10 +221,7 @@
           </h3>
         </a>
 
-        <button
-          on:click={trackOrder}
-          class="{cardClass} bg-purple-600 dark:bg-purple-700 text-white"
-        >
+        <button class="{cardClass} bg-purple-600 dark:bg-purple-700 text-white">
           <img src={TrackingTopIcon} alt="TrackButton Icon" class={iconClass} />
           <h3 class={titleClass}>{$_("tracking")}</h3>
         </button>
@@ -284,12 +253,15 @@
         </button>
       </div>
     </div>
+    <!-- <FeatureList customClass="w-full" /> -->
   </section>
+
+  <TransportationSection backgroundImage="/images/logistics-bg01.jpg" />
 
   <!-- Modal hiển thị trạng thái đơn hàng -->
   {#if showModal}
     <div
-      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+      class="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50"
     >
       <div
         class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-md w-full mx-4"
@@ -309,21 +281,53 @@
         {:else if errorMessage}
           <p class="text-red-500 dark:text-red-400">{errorMessage}</p>
         {:else}
-          <div class="space-y-2">
-            {#each getOrderDetails(orderStatus || ({ trackingId: "", status: "" } as Tracking)) as detail}
-              <p class="text-gray-700 dark:text-gray-300 flex items-center">
-                <span class="font-semibold">{detail.label}</span>
-                <span
-                  class="ml-2 flex items-center {detail.color ||
-                    'text-gray-700 dark:text-gray-300'}"
-                >
-                  {#if detail.icon}
-                    <img src={detail.icon} alt="Icon" class="w-4 h-4 mr-1" />
-                  {/if}
-                  {detail.value}
-                </span>
+          <div class="space-y-4">
+            <!-- Hiển thị mã đơn hàng -->
+            {#if order}
+              <p
+                class="text-gray-800 dark:text-gray-200 text-xl flex items-center"
+              >
+                <span class="font-semibold">{$_("orderId")}:</span>
+                <span class="ml-3">{order.trackingId}</span>
               </p>
-            {/each}
+            {/if}
+
+            <!-- Hiển thị trạng thái -->
+            <p
+              class="text-gray-800 dark:text-gray-200 text-xl flex items-center"
+            >
+              <span class="font-semibold">{$_("status")}:</span>
+              <span class="ml-3 flex items-center {statusConfig.color}">
+                <img
+                  src={statusConfig.statusIcon}
+                  alt="Icon"
+                  class="w-6 h-6 mr-3"
+                />
+                {statusConfig.label}
+              </span>
+            </p>
+
+            <!-- Hiển thị vị trí -->
+            {#if order?.location}
+              <p
+                class="text-gray-800 dark:text-gray-200 text-xl flex items-center"
+              >
+                <span class="font-semibold">{$_("location")}:</span>
+                <span class="ml-3">{order.location}</span>
+              </p>
+            {/if}
+
+            <!-- Hiển thị thời gian cập nhật -->
+            {#if order?.updatedAt}
+              <p
+                class="text-gray-800 dark:text-gray-200 text-xl flex items-center"
+              >
+                <span class="font-semibold">{$_("updatedAt")}:</span>
+                <span class="ml-3"
+                  >{new Date(order.updatedAt).toLocaleString()}</span
+                >
+              </p>
+            {/if}
           </div>
         {/if}
         <button

@@ -19,5 +19,7 @@
   "statusProcessing": "Đang xử lý",
   "statusDelivering": "Đang giao hàng",
   "statusDelivered": "Đã giao",
-  "statusCancelled": "Hủy"
+  "statusCancelled": "Hủy",
+  "statusReturned": "Hoàn hàng",
+  "statusUnknown": "Không rõ"
 }

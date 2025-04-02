@@ -26,4 +26,5 @@ export interface Tracking {
   status: string;
   location?: string;
   updatedAt?: Date;
+  notes?: string;
 }
