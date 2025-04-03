@@ -11,23 +11,23 @@
   const services: Service[] = [
     {
       title: "Supply Chain Planning",
-      link: "https://globallogistics.themerex.net/services/supply-chain-planning/",
-      icon: "icon-contract-logistics-1",
+      link: "#",
+      icon: "/icons/icon-contract-logistics-1.svg",
     },
     {
       title: "Cargo Transportation",
-      link: "https://globallogistics.themerex.net/services/sea-transportation/",
-      icon: "icon-source-optimization",
+      link: "#",
+      icon: "/icons/icon-source-optimization.svg",
     },
     {
       title: "Warehousing & Storage",
-      link: "https://globallogistics.themerex.net/services/warehouse-services/",
-      icon: "icon-warehousing-and-storage",
+      link: "#",
+      icon: "/icons/icon-warehousing-and-storage.svg",
     },
     {
       title: "Retail & Transit Packaging",
-      link: "https://globallogistics.themerex.net/services/customs-clearance/",
-      icon: "icon-retail-and-transit",
+      link: "#",
+      icon: "/icons/icon-retail-and-transit.svg",
     },
   ];
 
@@ -36,77 +36,42 @@
 </script>
 
 <section
-  class="relative py-12 bg-cover bg-top bg-no-repeat h-[600px] overflow-hidden bg-[url('{backgroundImage}')]"
+  class="relative py-16 bg-cover bg-center text-gray-900 dark:text-gray-100"
+  style="background-image: url({backgroundImage})"
 >
-  <div class="container mx-auto px-4 max-w-5xl">
-    <!-- Spacer đầu tiên -->
-    <div class="h-52" />
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
-    <!-- Nội dung chính -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Cột trái: Tiêu đề -->
-      <div>
-        <div class="text-white">
-          <span class="block text-lg font-medium mb-2">We offer you</span>
-          <h1 class="text-4xl font-bold">
-            Full range of transportation services
-          </h1>
-        </div>
-      </div>
+  <!-- Content -->
+  <div class="relative container mx-auto px-4">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-8">
+      Our Services
+    </h2>
+    <p class="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+      Explore our wide range of logistics services designed to meet your needs.
+    </p>
 
-      <!-- Cột phải: Mô tả -->
-      <div class="text-gray-300">
-        <p>
-          Adipiscing elit, sed do euismod tempor incidunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco.
-        </p>
-        <p class="mt-4">
-          Adipiscing elit, sed do euismod tempor incidunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam.
-        </p>
-      </div>
-    </div>
-
-    <!-- Spacer giữa -->
-    <div class="h-24" />
-
-    <!-- Danh sách dịch vụ -->
+    <!-- Service Cards -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {#each services as service}
-        <div class="flex flex-col items-center text-center text-white">
-          <span class="{service.icon} text-4xl mb-4" />
-          <h4 class="text-xl font-semibold mb-2">
-            <a href={service.link} class="hover:underline">{service.title}</a>
-          </h4>
-          <a
-            href={service.link}
-            class="text-blue-400 hover:text-blue-300 flex items-center"
+      {#each services as { title, link, icon }}
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex flex-col items-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition-transform hover:scale-105 hover:shadow-lg"
+        >
+          <img
+            src={icon}
+            alt={title}
+            class="w-16 h-16 mb-4 group-hover:opacity-80"
+          />
+          <h3
+            class="text-lg font-semibold text-gray-800 dark:text-gray-200 text-center"
           >
-            <span>Read More</span>
-            <span class="ml-2">→</span>
-          </a>
-        </div>
+            {title}
+          </h3>
+        </a>
       {/each}
     </div>
-
-    <!-- Spacer cuối -->
-    <div class="h-52" />
   </div>
 </section>
-
-<style lang="postcss">
-  /* Giả lập các icon (cần thay bằng icon thực tế trong dự án) */
-  .icon-contract-logistics-1::before {
-    content: "🚚";
-  }
-  .icon-source-optimization::before {
-    content: "⛴️";
-  }
-  .icon-warehousing-and-storage::before {
-    content: "🏢";
-  }
-  .icon-retail-and-transit::before {
-    content: "📦";
-  }
-</style>
