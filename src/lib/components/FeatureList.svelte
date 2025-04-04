@@ -42,17 +42,3 @@
     </a>
   {/each}
 </div>
-
-<style lang="postcss">
-  a {
-    text-decoration: none;
-  }
-
-  a:hover h3 {
-    color: #3b82f6; /* Màu xanh khi hover */
-  }
-
-  a:hover svg {
-    transform: scale(1.2); /* Phóng to icon khi hover */
-  }
-</style>

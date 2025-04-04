@@ -6,6 +6,8 @@
   // Import Component
   import HeroSection from "$lib/components/HeroSection.svelte";
   import TransportationSection from "$lib/components/TransportationSection.svelte";
+  import BannerMiddle from "$lib/components/BannerMiddle.svelte";
+  import QuickLinks from "$lib/components/QuickLinks.svelte";
 
   // Khai báo biến
   let trackingId = "";
@@ -20,5 +22,13 @@
   <HeroSection bind:trackingId {changeLanguage} />
 
   <!-- Transportation Section -->
-  <TransportationSection backgroundImage="/images/logistics-bg01.jpg" />
+  <!-- <TransportationSection backgroundImage="/images/logistics-bg01.jpg" /> -->
+
+  <BannerMiddle />
+
+  <!-- Quick Links Section -->
+  <!-- <QuickLinks /> -->
+
+  <!-- Transportation Section -->
+  <TransportationSection />
 </main>
