@@ -45,5 +45,19 @@
   "emailPlaceholder": "Enter your email",
   "phonePlaceholder": "Enter your phone number",
   "errorEmailRequired": "Please enter your email.",
-  "errorPhoneRequired": "Please enter your phone number."
+  "errorPhoneRequired": "Please enter your phone number.",
+  "pricePerKg": "5 K / 1 Kg",
+  "commitmentDescription": "Velog has over 15 years of experience leading the logistics market.",
+  "services": {
+    "expressShipping": "Express Shipping",
+    "competitiveRates": "Competitive Rates",
+    "fullInsurance": "100% Insurance",
+    "trendSupport": "Trend Support",
+    "bulkyTransport": "Bulky Transport",
+    "fullProcedure": "Full Procedure",
+    "quoteIn5Minutes": "Quote in 5 Minutes",
+    "support247": "24/7 Support",
+    "diversePayment": "Diverse Payment Options",
+    "loyaltyDiscount": "Loyalty Discounts"
+  }
 }

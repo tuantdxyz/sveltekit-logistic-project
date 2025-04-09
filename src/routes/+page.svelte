@@ -7,7 +7,7 @@
   import HeroSection from "$lib/components/HeroSection.svelte";
   import TransportationSection from "$lib/components/TransportationSection.svelte";
   import BannerMiddle from "$lib/components/BannerMiddle.svelte";
-  import QuickLinks from "$lib/components/QuickLinks.svelte";
+  // import QuickLinks from "$lib/components/QuickLinks.svelte";
 
   // Khai báo biến
   let trackingId = "";

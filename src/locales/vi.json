@@ -23,7 +23,7 @@
   "statusReturned": "Hoàn hàng",
   "statusUnknown": "Không rõ",
   "bannerTitle": "Tiết kiệm lên đến 49%* cho mỗi lô hàng",
-  "bannerDescription": "Ưu đãi độc quyền cho người mới",
+  "bannerDescription": "Ưu đãi độc quyền cho người mới chỉ",
   "getOfferButton": "Nhận Ưu đãi",
   "servicesTableTitle": "Chọn dịch vụ",
   "emailLabel": "Email",
@@ -47,5 +47,20 @@
   "emailPlaceholder": "Nhập email của bạn",
   "phonePlaceholder": "Nhập số điện thoại của bạn",
   "errorEmailRequired": "Vui lòng nhập email.",
-  "errorPhoneRequired": "Vui lòng nhập số điện thoại."
+  "errorPhoneRequired": "Vui lòng nhập số điện thoại.",
+  "pricePerKg": "5 K / 1 Kg",
+  "commitmentTitle": "CAM KẾT CỦA CHÚNG TÔI",
+  "commitmentDescription": "Velog với trên 15 năm kinh nghiệm dẫn đầu thị trường về logistics.",
+  "services": {
+    "expressShipping": "Gửi hàng hỏa tốc",
+    "competitiveRates": "Cước phí cạnh tranh",
+    "fullInsurance": "Bảo hiểm 100%",
+    "trendSupport": "Trợ giúp tìm trend",
+    "bulkyTransport": "Vận chuyển hàng cồng kềnh",
+    "fullProcedure": "Thủ tục trọn gói",
+    "quoteIn5Minutes": "Báo giá trong 5 phút",
+    "support247": "Support 24/7",
+    "diversePayment": "Thanh toán đa dạng",
+    "loyaltyDiscount": "Ưu đãi cho khách hàng thân thiết"
+  }
 }
