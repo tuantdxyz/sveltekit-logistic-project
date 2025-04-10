@@ -7,6 +7,8 @@
   import HeroSection from "$lib/components/HeroSection.svelte";
   import TransportationSection from "$lib/components/TransportationSection.svelte";
   import BannerMiddle from "$lib/components/BannerMiddle.svelte";
+  import RankSection from "$lib/components/RankSection.svelte";
+  import GalleryBehind from "$lib/components/GalleryBehind.svelte";
   // import QuickLinks from "$lib/components/QuickLinks.svelte";
 
   // Khai báo biến
@@ -31,4 +33,8 @@
 
   <!-- Transportation Section -->
   <TransportationSection />
+
+  <RankSection />
+
+  <GalleryBehind />
 </main>
