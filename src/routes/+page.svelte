@@ -9,6 +9,7 @@
   import BannerMiddle from "$lib/components/BannerMiddle.svelte";
   import RankSection from "$lib/components/RankSection.svelte";
   import GalleryBehind from "$lib/components/GalleryBehind.svelte";
+  import LastBlogNew from "$lib/components/LastBlogNew.svelte";
   // import QuickLinks from "$lib/components/QuickLinks.svelte";
 
   // Khai báo biến
@@ -37,4 +38,6 @@
   <RankSection />
 
   <GalleryBehind />
+
+  <LastBlogNew />
 </main>
