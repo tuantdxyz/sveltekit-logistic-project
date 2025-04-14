@@ -30,7 +30,7 @@
       rank: 3,
       avatar: "https://via.placeholder.com/48",
       name: "Samsung",
-      description: "Điện tử và thiết bị gia dụng",
+      description: "Điện tử và công nghệ",
       points: 1350,
     },
   ];
@@ -99,7 +99,7 @@
     {
       supplierName: "Fashionista",
       discountRate: "50%",
-      description: "Thời trang cao cấp, giảm mạnh tới 50%",
+      description: "Thời trang cao cấp, giảm mạnh",
       logo: "https://via.placeholder.com/48",
     },
     {
@@ -111,7 +111,7 @@
     {
       supplierName: "Home Plus",
       discountRate: "40%",
-      description: "Gia dụng thông minh, giảm tới 40%",
+      description: "Gia dụng thông minh, giảm tới",
       logo: "https://via.placeholder.com/48",
     },
   ];

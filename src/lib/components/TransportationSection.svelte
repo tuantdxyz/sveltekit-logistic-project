@@ -1,5 +1,6 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
+  import TimelineSection from '$lib/components/TimelineSection.svelte';
 
   interface Service {
     title: string;
@@ -94,7 +95,7 @@
       {/each}
     </div>
   </div>
-
+  <TimelineSection />
   <div class="btImage mt-4 flex justify-center">
     <img
       decoding="async"

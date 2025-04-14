@@ -10,7 +10,11 @@
   import RankSection from "$lib/components/RankSection.svelte";
   import GalleryBehind from "$lib/components/GalleryBehind.svelte";
   import LastBlogNew from "$lib/components/LastBlogNew.svelte";
+  import PartnerComponent from '$lib/components/PartnerComponent.svelte';
+  import FlexiblePricing from '$lib/components/FlexiblePricing.svelte';
+  
   // import QuickLinks from "$lib/components/QuickLinks.svelte";
+  
 
   // Khai báo biến
   let trackingId = "";
@@ -30,9 +34,7 @@
   <BannerMiddle />
 
   <!-- Quick Links Section -->
-  <!-- <QuickLinks /> -->
 
-  <!-- Transportation Section -->
   <TransportationSection />
 
   <RankSection />
@@ -40,4 +42,9 @@
   <GalleryBehind />
 
   <LastBlogNew />
+
+ <FlexiblePricing />
+
+  <!-- <PartnerComponent /> -->
+
 </main>

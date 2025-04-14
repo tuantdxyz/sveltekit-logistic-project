@@ -4,7 +4,7 @@
 </script>
 
 <div
-  class="flex justify-center space-x-4 mb-6 border-b border-gray-300 dark:border-gray-700"
+  class="flex justify-center mb-6 border-b border-gray-300 dark:border-gray-700"
 >
   <button
     class={`py-2 px-4 font-semibold text-sm sm:text-base border-b-2 transition-all ${
