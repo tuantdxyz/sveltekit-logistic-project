@@ -1,0 +1,24 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon full-insurance-icon"
+>
+  <!-- Shield -->
+  <path
+    d="M32 2l20 8v18c0 14-9 26-20 30S12 42 12 28V10l20-8z"
+    fill="#f97316"
+    stroke="#000"
+  />
+  <!-- Checkmark -->
+  <path
+    d="M24 32l6 6 10-12"
+    stroke="#fff"
+    stroke-width="3"
+    fill="none"
+  />
+</svg>

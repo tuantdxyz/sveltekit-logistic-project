@@ -1,0 +1,24 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon loyalty-rewards-icon"
+>
+  <!-- Badge -->
+  <circle cx="32" cy="32" r="20" fill="#f97316" />
+  <path
+    d="M32 12v8M32 44v8M44 32h8M12 32h8"
+    stroke="#fff"
+    stroke-width="2"
+  />
+
+  <!-- Star -->
+  <path
+    d="M32 22l3.09 6.26L42 30l-5 4.87L38.18 42 32 38.73 25.82 42 27 34.87 22 30l6.91-1.74L32 22z"
+    fill="#fff"
+  />
+</svg>

@@ -1,0 +1,29 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon multi-payment-icon"
+>
+  <!-- Credit Card -->
+  <rect x="8" y="16" width="48" height="32" rx="4" ry="4" fill="#f97316" />
+  <rect x="12" y="24" width="16" height="8" fill="#fff" />
+  <line x1="12" y1="36" x2="40" y2="36" stroke="#fff" stroke-width="2" />
+
+  <!-- Coin -->
+  <circle cx="48" cy="48" r="8" fill="#374151" />
+  <text
+    x="48"
+    y="52"
+    text-anchor="middle"
+    font-size="8"
+    fill="#fff"
+    font-family="Arial, sans-serif"
+    font-weight="bold"
+  >
+    $
+  </text>
+</svg>

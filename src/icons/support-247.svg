@@ -1,0 +1,17 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon support-24-7-icon"
+>
+  <!-- Phone Body -->
+  <rect x="20" y="8" width="24" height="48" rx="4" ry="4" fill="#f97316" />
+  <circle cx="32" cy="52" r="2" fill="#fff" />
+
+  <!-- Phone Screen -->
+  <rect x="24" y="12" width="16" height="32" rx="2" ry="2" fill="#fff" />
+</svg>

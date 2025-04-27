@@ -1,0 +1,23 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon bulky-shipping-icon"
+>
+  <!-- Truck Body -->
+  <rect x="4" y="24" width="40" height="20" rx="2" ry="2" fill="#f97316" />
+  <path d="M44 32h10l6 6v6H44z" fill="#374151" />
+
+  <!-- Wheels -->
+  <circle cx="14" cy="50" r="6" fill="#374151" />
+  <circle cx="38" cy="50" r="6" fill="#374151" />
+  <circle cx="50" cy="50" r="6" fill="#374151" />
+
+  <!-- Cargo -->
+  <rect x="8" y="16" width="32" height="12" rx="2" ry="2" fill="#374151" />
+  <path d="M12 16h24v4H12z" fill="#fff" />
+</svg>

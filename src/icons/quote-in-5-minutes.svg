@@ -1,0 +1,22 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon quote-in-5-minutes-icon"
+>
+  <!-- Clock -->
+  <circle cx="32" cy="20" r="12" fill="#f97316" />
+  <path d="M32 16v6l4 4" stroke="#fff" stroke-width="3" />
+
+  <!-- Document -->
+  <rect x="12" y="36" width="40" height="20" rx="4" ry="4" fill="#374151" />
+  <path
+    d="M16 40h32M16 46h20"
+    stroke="#fff"
+    stroke-width="2"
+  />
+</svg>

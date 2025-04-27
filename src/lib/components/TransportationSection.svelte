@@ -12,53 +12,53 @@
     {
       title: $_("services.expressShipping"),
       link: "#",
-      icon: "/icons/icon-contract-logistics-1.svg",
+      icon: "/src/icons/express-shipping.svg",
     },
     {
       title: $_("services.competitiveRates"),
       link: "#",
-      icon: "/icons/icon-source-optimization.svg",
+      icon: "/src/icons/competitive-rates.svg",
     },
     {
       title: $_("services.fullInsurance"),
       link: "#",
-      icon: "/icons/icon-warehousing-and-storage.svg",
+      icon: "/src/icons/full-insurance.svg",
     },
     {
       title: $_("services.trendSupport"),
       link: "#",
-      icon: "/icons/icon-retail-and-transit.svg",
+      icon: "/src/icons/trend-support.svg",
     },
 
     {
       title: $_("services.fullProcedure"),
       link: "#",
-      icon: "/icons/icon-retail-and-transit.svg",
+      icon: "/src/icons/full-procedure.svg",
     },
     {
       title: $_("services.quoteIn5Minutes"),
       link: "#",
-      icon: "/icons/icon-retail-and-transit.svg",
+      icon: "/src/icons/quote-in-5-minutes.svg",
     },
     {
       title: $_("services.support247"),
       link: "#",
-      icon: "/icons/icon-retail-and-transit.svg",
+      icon: "/src/icons/support-247.svg",
     },
     {
       title: $_("services.diversePayment"),
       link: "#",
-      icon: "/icons/icon-retail-and-transit.svg",
+      icon: "/src/icons/multi-payment.svg",
     },
     {
       title: $_("services.bulkyTransport"),
       link: "#",
-      icon: "/icons/icon-retail-and-transit.svg",
+      icon: "/src/icons/bulky-shipping.svg",
     },
     {
       title: $_("services.loyaltyDiscount"),
       link: "#",
-      icon: "/icons/icon-retail-and-transit.svg",
+      icon: "/src/icons/loyalty-rewards.svg",
     },
   ];
 </script>
@@ -95,13 +95,16 @@
       {/each}
     </div>
   </div>
-  <TimelineSection />
+  
+  <!-- xe tai ngan cach -->
   <div class="btImage mt-4 flex justify-center">
     <img
       decoding="async"
-      src="/icons/truck-vignette-gray.png"
+      src="/src/icons/truck-vignette-gray.png"
       alt="truck-vignette-gray"
       class="max-w-full h-auto"
     />
   </div>
+
+  <!-- <TimelineSection /> -->
 </section>

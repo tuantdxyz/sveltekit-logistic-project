@@ -1,0 +1,17 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon trend-support-icon"
+>
+
+  <!-- Bars -->
+  <rect x="8" y="44" width="8" height="12" fill="#f97316" />
+  <rect x="22" y="36" width="8" height="20" fill="#f97316" />
+  <rect x="36" y="28" width="8" height="28" fill="#f97316" />
+  <rect x="50" y="20" width="8" height="36" fill="#f97316" />
+</svg>
